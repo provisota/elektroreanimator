@@ -76,21 +76,17 @@ img { max-width: 100%; }
 .wordmark {
   display: grid; align-items: center; width: min(100%, clamp(440px, 36vw, 480px)); min-width: 0; min-height: 44px;
 }
-.wordmark-banner { position: relative; display: block; overflow: hidden; isolation: isolate; }
-.wordmark img {
-  display: block; width: 100%; height: auto; aspect-ratio: 8.48;
-  object-fit: cover; object-position: center 52.5%;
+.wordmark-image { display: block; width: 100%; height: auto; }
+[data-theme="dark"] .wordmark-image .logo-artwork { filter: url(#night-logo); }
+.logo-sweep { animation: logo-sweep 4s linear infinite; }
+.robot-sweep { animation: robot-sweep 7s ease-in-out infinite; }
+@keyframes logo-sweep {
+  0%, 46% { transform: translateX(0); }
+  80%, 100% { transform: translateX(2550px); }
 }
-.wordmark-banner::after {
-  content: ""; position: absolute; inset: 0 auto 0 0; width: 27%;
-  pointer-events: none;
-  background: linear-gradient(106deg, transparent 8%, #9eb1c233 33%, #9eb1c2dd 50%, #9eb1c244 68%, transparent 94%);
-  mix-blend-mode: lighten;
-  animation: wordmark-flash 4s linear infinite;
-}
-@keyframes wordmark-flash {
-  0%, 50% { transform: translateX(-105%); }
-  100% { transform: translateX(380%); }
+@keyframes robot-sweep {
+  0%, 52% { transform: translateY(0); }
+  83%, 100% { transform: translateY(2020px); }
 }
 .main-nav { display: flex; justify-content: end; align-items: center; gap: clamp(12px, 1.8vw, 32px); font-size: 14px; }
 .main-nav a { text-decoration-color: transparent; }
@@ -184,7 +180,7 @@ details[open] summary .vertical { display: none; }
 .prose p + p { margin-top: 1em; }
 .service-terms { margin-top: clamp(22px, 4vw, 44px); }
 .about-figure { margin-top: 32px; max-width: clamp(184px, 19vw, 232px); }
-.about-figure img { display: block; height: auto; }
+.robot-image { display: block; width: 100%; height: auto; }
 .request {
   background: var(--panel); padding: clamp(24px, 4vw, 60px);
   margin-top: clamp(36px, 6vw, 82px); border-bottom: 0;
@@ -241,7 +237,6 @@ details[open] summary .vertical { display: none; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   body::before { transform: none; will-change: auto; }
-  .wordmark-banner::after { display: none; }
-  .about-figure { display: none; }
+  .logo-sweep, .robot-sweep { display: none; }
 }
 

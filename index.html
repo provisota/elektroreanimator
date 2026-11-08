@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Elektroreanimator · Ilmenau</title>
   <script src="theme.js?v=9788b1c123"></script>
-  <link rel="stylesheet" href="style.css?v=ce71f2097f">
+  <link rel="stylesheet" href="style.css?v=958d593bf4">
   <link rel="icon" href="files/favicon.svg" type="image/svg+xml">
   <script src="background.js" defer></script>
 </head>
@@ -13,9 +13,32 @@
 <div class="frame">
   <header class="mast">
     <a class="wordmark" href="#start">
-      <span class="wordmark-banner">
-        <img src="files/elektroreanimator-logo-clean.jpg" width="1200" height="401" alt="Elektroreanimator – Haushaltsgeräte Reparaturservice">
-      </span>
+      <svg class="wordmark-image" width="2172" height="260" viewBox="0 258 2172 260" role="img" aria-label="Elektroreanimator – Haushaltsgeräte Reparaturservice">
+        <defs>
+          <image id="logo-artwork" width="2172" height="724" href="files/elektroreanimator-wordmark.png"/>
+          <mask id="logo-mask" maskUnits="userSpaceOnUse" x="0" y="0" width="2172" height="724" mask-type="alpha">
+            <use href="#logo-artwork"/>
+          </mask>
+          <filter id="night-logo" color-interpolation-filters="sRGB">
+            <feComponentTransfer>
+              <feFuncR type="linear" slope=".51" intercept=".48"/>
+              <feFuncG type="linear" slope=".45" intercept=".54"/>
+              <feFuncB type="linear" slope=".38" intercept=".61"/>
+            </feComponentTransfer>
+          </filter>
+          <linearGradient id="logo-shine" x2="100%" y2="26%">
+            <stop offset="0" stop-color="#f2f9ff" stop-opacity="0"/>
+            <stop offset=".38" stop-color="#d5ecff" stop-opacity=".24"/>
+            <stop offset=".53" stop-color="#f8fbff" stop-opacity=".88"/>
+            <stop offset=".67" stop-color="#d5ecff" stop-opacity=".28"/>
+            <stop offset="1" stop-color="#f2f9ff" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+        <use class="logo-artwork" href="#logo-artwork"/>
+        <g mask="url(#logo-mask)">
+          <rect class="logo-sweep" x="-360" y="258" width="350" height="260" fill="url(#logo-shine)"/>
+        </g>
+      </svg>
     </a>
     <nav class="main-nav" aria-label="Navigation">
       <a href="#ueber-uns">Über uns</a>
@@ -124,7 +147,25 @@ an.</p>
     <section class="section about" id="ueber-uns" aria-labelledby="about-title">
       <div class="about-heading">
         <h2 id="about-title">Über uns</h2>
-        <figure class="about-figure"><img src="files/elektroreanimator-robot.gif" alt="" width="285" height="566" loading="lazy"></figure>
+        <figure class="about-figure">
+          <svg class="robot-image" width="957" height="1644" viewBox="0 0 957 1644" aria-hidden="true">
+            <defs>
+              <image id="robot-artwork" width="957" height="1644" href="files/elektroreanimator-robot.png"/>
+              <mask id="robot-mask" maskUnits="userSpaceOnUse" x="0" y="0" width="957" height="1644" mask-type="alpha">
+                <use href="#robot-artwork"/>
+              </mask>
+              <linearGradient id="robot-shine" x2="0%" y2="100%">
+                <stop offset="0" stop-color="#f2f9ff" stop-opacity="0"/>
+                <stop offset=".51" stop-color="#e2f1ff" stop-opacity=".29"/>
+                <stop offset="1" stop-color="#f2f9ff" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <use href="#robot-artwork"/>
+            <g mask="url(#robot-mask)">
+              <rect class="robot-sweep" x="0" y="-370" width="957" height="360" fill="url(#robot-shine)"/>
+            </g>
+          </svg>
+        </figure>
       </div>
       <article class="prose" data-source="DE/ueberuns.htm">
         <p>Die Firma wurde im April 2006 
