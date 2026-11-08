@@ -208,7 +208,13 @@ details[open] summary .vertical { display: none; }
   margin-inline: var(--gutter); padding-block: 16px 24px; border-top: 1px solid var(--line);
   display: flex; align-items: center; flex-wrap: wrap; gap: 8px 24px; font-size: 12px;
 }
-.footer .partner { display: inline-flex; align-items: center; margin-inline-start: auto; min-height: 44px; }
+.footer .partner {
+  display: inline-flex; align-items: center; gap: 8px; margin-inline-start: auto; min-height: 44px;
+  font-size: 13px; font-weight: 700; text-decoration: none;
+}
+.partner:hover .partner-label { text-decoration: underline; }
+.partner-mark { display: block; flex: none; color: #003d8f; }
+[data-theme="dark"] .partner-mark { color: #a8c9ff; }
 @media (max-width: 1260px) {
   :root { --mast-offset: 124px; }
   .mast { grid-template-columns: minmax(0, 1fr) auto; gap: 0 16px; padding-top: 12px; }
