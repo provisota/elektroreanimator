@@ -194,7 +194,14 @@ details[open] summary .vertical { display: none; }
 .contact-pane { background: var(--yellow); padding: clamp(22px, 3vw, 50px); min-width: 0; }
 .contact-pane .phone { font-weight: 750; }
 .directions { min-width: 0; }
-.directions .map-mark { display: inline-flex; align-items: center; min-height: 44px; margin-top: 6px; }
+.directions .map-mark {
+  display: inline-flex; align-items: center; gap: 12px; min-height: 44px; margin-top: 6px;
+}
+.map-mark-pin { flex: none; }
+.map-mark .map-logo-dark, [data-theme="dark"] .map-mark .map-logo-light { display: none; }
+[data-theme="dark"] .map-mark .map-logo-dark { display: block; }
+.map-mark-arrow { opacity: .7; }
+.map-mark:hover .map-mark-arrow, .map-mark:focus-visible .map-mark-arrow { opacity: 1; }
 .directions iframe { display: block; width: 100%; height: auto; aspect-ratio: 4/3; max-height: 420px; border: 0; background: var(--panel); }
 .map-link { display: inline-flex; align-items: center; min-height: 44px; }
 .footer {
